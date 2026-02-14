@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handmade Duo | Crafting Stories by Hand and Heart</title>
+    <style>
+        :root {
+            --primary-color: #5D4037; /* Earthy Brown */
+            --accent-color: #D4AF37; /* Sunflower Gold */
+            --bg-color: #FDFBF7; /* Canvas/Paper White */
+            --secondary-bg: #F5E6D3; /* Warm Beige */
+            --text-color: #333;
+            --font-heading: 'Georgia', serif;
+            --font-body: 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--secondary-bg);
+            text-align: center;
+            padding: 4rem 1rem;
+            background-image: url('https://placehold.co/1200x600/e8dcca/5d4037?text=Artistic+Studio+Background+(PDF+Page+2)');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #bfa130;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 3rem 10%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Product Sections */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 1rem;
+            font-size: 2.2rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5%;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Specific Styles for "Whimsy" & "Decor" */
+        .split-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 4rem 5%;
+            background-color: #fff;
+        }
+
+        .split-section:nth-child(even) {
+            background-color: var(--bg-color);
+            flex-direction: row-reverse;
+        }
+
+        .split-text {
+            flex: 1;
+            padding: 2rem;
+            min-width: 300px;
+        }
+
+        .split-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .split-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .contact h2 {
+            color: var(--accent-color);
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #4a332a;
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .split-section { flex-direction: column !important; }
+            .split-text, .split-image { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Handmade Duo</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#florals">Florals</a>
+            <a href="#decor">Art & Decor</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Crafting Stories by Hand & Heart</h1>
+        <p>"Let's create something special together!"</p>
+        <a href="#contact" class="btn">Order Custom Gifts</a>
+    </section>
+
+    <section id="about" class="intro">
+        <h2>We believe in the beauty of intention.</h2>
+        <p>
+            <strong>Handmade Duo</strong> is a studio specialising in unique, heartfelt gifts that tell a story. 
+            We blend disciplines to create texture and warmth for your life.
+        </p>
+        <p style="margin-top: 20px;">
+            <span class="highlight">Our Disciplines:</span><br>
+            • <strong>Crochet:</strong> Everlasting florals and whimsical charms.<br>
+            • <strong>Macrame:</strong> Textured home decor designed to add warmth.<br>
+            • <strong>Art:</strong> Hand-painted canvases and embroidery inspired by the masters.
+        </p>
+    </section>
+
+    <h2 id="florals" class="section-title">The Gift of Eternity: Forever Florals</h2>
+    <div class="intro" style="padding-top: 0; padding-bottom: 1rem;">
+        <p>Why give flowers that fade when you can give blooms that last a lifetime?</p>
+    </div>
+    
+    <div class="category-grid">
+        <div class="card">
+            <img src="https://placehold.co/400x300/ffcc00/333?text=Crochet+Sunflowers" alt="Crochet Sunflowers Bouquet">
+            <div class="card-content">
+                <h3>Signature Sunflowers</h3>
+                <p>Symbols of adoration and warmth. Available as bright single stems or arranged in rustic bouquets.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://placehold.co/400x300/cc3333/fff?text=Crochet+Roses" alt="Crochet Roses Box Set">
+            <div class="card-content">
+                <h3>Romantic Roses</h3>
+                <p>The classic gesture, reimagined in soft yarn. Available in deep reds and delicate pinks, perfectly presented in gift-ready boxed sets.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="split-section">
+        <div class="split-image">
+            <img src="https://placehold.co/500x500/66cc66/fff?text=Fruit+Turtle+Keychains" alt="Fruit Turtle Keychains">
+        </div>
+        <div class="split-text">
+            <h2>Whimsy on the Go</h2>
+            <p>Distinctive accessories designed to bring a smile to your daily routine. Perfect for friendship tokens or a personal treat.</p>
+            <ul>
+                <li><strong>Fruit Turtle Keychains:</strong> Adorable, collectable turtles featuring vibrant fruit motifs (Strawberry, Watermelon, Kiwi, Dragon Fruit).</li>
+                <li><strong>Floral Bag Charms:</strong> Elegant statement pieces for handbags featuring our signature Roses and Sunflowers.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="decor" class="split-section">
+        <div class="split-text">
+            <h2>Art & Decor: A Tribute to the Masters</h2>
+            <p>We blend texture and brushstrokes to create mixed-media masterpieces, paying tribute to Vincent van Gogh.</p>
+            <ul>
+                <li><strong>'Starry Night' Embroidery:</strong> Intricate thread work combined with 3D crochet sunflowers.</li>
+                <li><strong>Canvas Wall Art:</strong> Pieces like 'Moonlight Couple', capturing romance under a swirled sky.</li>
+                <li><strong>Functional Art:</strong> Hand-painted bookmarks for an artistic escape.</li>
+            </ul>
+        </div>
+        <div class="split-image">
+            <img src="https://placehold.co/500x500/333399/fff?text=Starry+Night+Embroidery" alt="Starry Night Embroidery Art">
+        </div>
+    </div>
+
+    <h2 class="section-title">Home Sweet Home</h2>
+    <div class="category-grid">
+        <div class="card">
+            <img src="https://placehold.co/400x300/e6c200/333?text=Macrame+Coasters" alt="Macrame Coasters">
+            <div class="card-content">
+                <h3>Macrame Coasters</h3>
+                <p>Spiral designs in a curated palette of Mustard, Teal, Pink, and monochrome. Practical protection for your surfaces.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://placehold.co/400x300/ffcccc/333?text=Quirky+Magnets" alt="Quirky Magnets">
+            <div class="card-content">
+                <h3>Quirky Magnets</h3>
+                <p>Add character to your fridge with our pun-filled range:</p>
+                <ul style="font-size: 0.9rem; color: #555;">
+                    <li>"You're my cuppa chai"</li>
+                    <li>"You're the chilli to my paneer"</li>
+                    <li>"You Recharge My Soul"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+        <h2>Let's Create Something Special</h2>
+        <p>Have a specific colour palette or a unique idea? We love bringing your vision to life through custom orders.</p>
+        
+        <div class="contact-info">
+            <p><strong>DM us for catalogues, queries, and customizations.</strong></p>
+            <p>WhatsApp Us:</p>
+            <p style="font-size: 1.5rem; font-weight: bold;">
+                +91 90191 59680 <br>
+                +91 96548 80677
+            </p>
+        </div>
+        <br>
+        <a href="https://wa.me/919019159680" class="btn" style="background-color: #25D366; color: white;">Chat on WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Handmade Duo. All content inspired by Handmade Duo Brochure.</p>
+    </footer>
+
+</body>
+</html>
